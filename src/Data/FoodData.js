@@ -1,4 +1,4 @@
-export const foods = [
+export const foodItems = [
     {
         name: 'Garlic bread',
         img: '/img/Starters/Garlic_Bread.jpeg',
@@ -270,3 +270,14 @@ export const foods = [
         ingredients: ''
     }
 ]
+
+export const foods = foodItems.reduce((res, food) => {
+    if (!res[food.section]) {
+        res[food.section] = [];
+    }
+    res[food.section].push(food)
+    return res;
+}, {})
+
+console.log(foods) //?
+
