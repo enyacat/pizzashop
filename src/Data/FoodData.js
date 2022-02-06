@@ -139,31 +139,31 @@ export const foodItems = [
     },
     {
         name: 'Vegetarian',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Pasta',
         ingredients: 'Garlic, Mushroom, Onion, Capsicum, Olives, Eggplant, Tomato Sauce (Served With Parmesan-Cheese And Fresh Shallots)'
     },
     {
         name: 'Bolognese',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Pasta',
         ingredients: 'Beef Mince, Garlic Tomato (Served With Parmesan-Cheese And Fresh Shallots)'
     },
     {
         name: 'Pollo e Funghi',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Pasta',
         ingredients: 'Garlic, Chicken, Mushroom, Beef Cubes (Served With Parmesan-Cheese And Fresh Shallots)'
     },
     {
         name: 'Boscaiola',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Pasta',
         ingredients: 'Garlic, Mushroom, Ham, Bacon, Beef Cubes, Creamy Sauce(Served With Parmesan-Cheese And Fresh Shallots)'
     },
     {
         name: 'Carbonara',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Pasta',
         ingredients: 'Garlic, Bacon, Mushroom, Beef Cubes, Egg (Served With Parmesan-Cheese And Fresh Shallots)'
     },
@@ -175,7 +175,7 @@ export const foodItems = [
     },
     {
         name: 'Nutella And Oreos Pizza',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Desserts',
         ingredients: 'Nutella And Oreos'
     },
@@ -187,37 +187,37 @@ export const foodItems = [
     },
     {
         name: 'French Vanilla Cheesecake 450g',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Desserts',
         ingredients: ''
     },
     {
         name: 'Chocolate Bavarian 450g',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Desserts',
         ingredients: ''
     },
     {
         name: 'Strawberries And Cream 450g',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Desserts',
         ingredients: ''
     },
     {
         name: 'Cookies And Cream 450g',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Desserts',
         ingredients: ''
     },
     {
         name: 'Greek Salad',
-        img: '/img/coming_soon.jpeg',
+        img: '/img/coming_soon.png',
         section: 'Salads',
         ingredients: 'Mixed Leaf, Tomatoes, Cucumber, Olives, Feta, Oregano, Balsamic Glaze'
     },
     {
-        name: '',
-        img: '/img/coming_soon.jpeg',
+        name: 'Chicken Caesar Salad',
+        img: '/img/coming_soon.png',
         section: 'Salads',
         ingredients: 'Mixed Leaf, Chicken, Bacon, Croutons, Caesar Dressing'
     },
