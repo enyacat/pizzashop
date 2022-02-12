@@ -13,18 +13,21 @@ const OrderStyled = styled.div`
     box-shadow: 4px 0px 5px 4px grey;
     display: flex;
     flex-direction: column;
-`
+`;
 
 const OrderContent = styled(DialogContent)`
     padding: 20px;
     height: 100%;
+`;
 
-`
+const OrderContainer = styled.div`
+    padding: 10px 0px;
+    border-bottom: 1px solid grey;
+`;
 
-const OrderFooter = styled.div`
-
-
-`
+const OrderItem = styled.div`
+    padding: 10px 0px;
+`;
 
 
 export function Order({ orders }) {
@@ -33,7 +36,18 @@ export function Order({ orders }) {
             {orders.length === 0 ? (
                 <OrderContent>Your order's looking pretty empty.</OrderContent>
             ) : (
-                <OrderContent>Found {orders.length} orders</OrderContent>
+                <OrderContent>
+                    {" "}
+                    <OrderContainer>Your Order:</OrderContainer>{" "}
+                    {orders.map(order => (
+                        <OrderContainer>
+                            <OrderItem>
+                                {order.name}
+                            </OrderItem>
+                        </OrderContainer>
+                    ))}
+
+                </OrderContent>
             )}
 
             <DialogFooter>
