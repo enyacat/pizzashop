@@ -1,10 +1,12 @@
 import React from "react";
 import styled from 'styled-components'
 import { FoodLabel } from "../Menu/FoodGrid";
+import { pizzaRed } from "../Styles/colors";
+import { Title } from "../Styles/title"
+
 
 const Dialog = styled.div`
     width: 500px;
-    height: 500px;
     background-color: white;
     position: fixed;
     top: 75px;
@@ -36,6 +38,29 @@ const DialogBannerName = styled(FoodLabel)`
     padding: 5px 40px;
 `
 
+export const DialogContent = styled.div`
+    overflow: auto;
+    min-height: 100px;
+`
+export const DialogFooter = styled.div`
+    box-shadow: 0px -2px 10px 0px grey;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+`
+export const ConfirmButton = styled(Title)`
+    margin: 10px;
+    color: white;
+    height: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    background-color: ${pizzaRed};
+`
+
+
 export function FoodDialog({ openFood, setOpenFood }) {
 
     function close() {
@@ -49,6 +74,10 @@ export function FoodDialog({ openFood, setOpenFood }) {
                 <DialogBanner img={openFood.img}>
                     <DialogBannerName>{openFood.name}</DialogBannerName>
                 </DialogBanner>
+                <DialogContent></DialogContent>
+                <DialogFooter>
+                    <ConfirmButton>Add to order</ConfirmButton>
+                </DialogFooter>
             </Dialog>
         </>
         ) : null
