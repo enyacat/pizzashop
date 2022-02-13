@@ -6,6 +6,8 @@ import { Title } from "../Styles/title";
 import { formatPrice } from "../Data/FoodData";
 import { QuantityInput } from "./QuantityInput";
 import { useQuantity } from "../Hooks/useQuantity"
+import { Toppings } from "./Toppings";
+import { useToppings } from "../Hooks/useToppings";
 
 const Dialog = styled.div`
     width: 500px;
@@ -41,13 +43,19 @@ const DialogBannerName = styled(FoodLabel)`
 `
 
 export function getPrice(order) {
-    return order.quantity * order.price;
+    const tPrice = order.toppings
+        .filter(t => t.checked)
+        .map(t => t.price)
+        .reduce((totalToppingPrice, toppingPrice) => totalToppingPrice + toppingPrice, 0)
+
+    return order.quantity * (order.price + tPrice)
 }
 
 export const DialogContent = styled.div`
     overflow: auto;
     min-height: 100px;
     padding: 0px 40px;
+    padding-bottom: 80px;
 `
 export const DialogFooter = styled.div`
     box-shadow: 0px -2px 10px 0px grey;
@@ -70,13 +78,15 @@ export const ConfirmButton = styled(Title)`
 
 function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
     const quantity = useQuantity(openFood && openFood.quantity);
+    const toppings = useToppings(openFood.toppings);
     function close() {
         setOpenFood();
     }
 
     const order = {
         ...openFood,
-        quantity: quantity.value
+        quantity: quantity.value,
+        toppings: toppings.toppings
     }
 
     function addToOrder() {
@@ -84,6 +94,11 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
         close();
     }
     if (!openFood) return null;
+
+    function hasToppings(food) {
+        return food.section.includes('pizza');
+    }
+
     return (
         openFood ? (<>
             <DialogShadow onClick={close} />
@@ -93,6 +108,10 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
                 </DialogBanner>
                 <DialogContent>
                     <QuantityInput quantity={quantity} />
+                    {hasToppings(openFood) && <>
+                        <h3> Extra Toppings </h3>
+                        <Toppings {...toppings} />
+                    </>}
                 </DialogContent>
                 <DialogFooter>
                     <ConfirmButton onClick={addToOrder}>Add to order: {formatPrice(getPrice(order))}</ConfirmButton>

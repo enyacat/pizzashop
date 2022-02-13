@@ -169,7 +169,7 @@ export const foodItems = [
     {
         name: 'Garlic Prawns',
         img: '/img/seafood/Garlic_Prawn.jpeg',
-        section: 'Seafood',
+        section: 'Seafood pizza',
         ingredients: 'Tom Base, Red Capsicum, Shallots, Sundried Tomatoes, Cheese, Garlic Marinated Prawns, Feta, (Served With Lemon Wedges)',
         price: 16
 
@@ -177,7 +177,7 @@ export const foodItems = [
     {
         name: 'Szechuan Prawn',
         img: '/img/seafood/Szechuan_Prawn.jpeg',
-        section: 'Seafood',
+        section: 'Seafood pizza',
         ingredients: 'Sweet-Chilli Sauce Base, Green Capsicum, Shallots, Cheese, Szechuan Seasoning Marinated Prawns(Served With Lemon Wedges)',
         price: 16
 
@@ -185,7 +185,7 @@ export const foodItems = [
     {
         name: 'Hot Chilli Prawns',
         img: '/img/seafood/Hot_Chilli_Prawns.jpeg',
-        section: 'Seafood',
+        section: 'Seafood pizza',
         ingredients: 'Garlic Base, Chilli Sauce Marinated Prawns, Cheese (Served With Fresh Shallots And Lemon Wedges)',
         price: 16
 
@@ -375,6 +375,4 @@ export const foods = foodItems.reduce((res, food) => {
     res[food.section].push(food)
     return res;
 }, {})
-
-console.log(foods) //?
 
