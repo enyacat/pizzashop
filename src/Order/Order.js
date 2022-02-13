@@ -36,6 +36,11 @@ const OrderItem = styled.div`
 
 
 export function Order({ orders }) {
+    const total = orders.reduce((total, order) => {
+        return total + getPrice(order);
+    }, 0);
+    const GST = (total / 11);
+
     return (
         <OrderStyled>
             {orders.length === 0 ? (
@@ -54,7 +59,20 @@ export function Order({ orders }) {
                             </OrderItem>
                         </OrderContainer>
                     ))}
-
+                    <OrderContainer>
+                        <OrderItem>
+                            <div />
+                            <div>Total: </div>
+                            <div />
+                            <div>{formatPrice(total)}</div>
+                        </OrderItem>
+                        <OrderItem>
+                            <div />
+                            <div>Includes GST of: </div>
+                            <div />
+                            <div>{formatPrice(GST)}</div>
+                        </OrderItem>
+                    </OrderContainer>
                 </OrderContent>
             )}
 
